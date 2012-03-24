@@ -8,6 +8,12 @@ git submodule init
 echo "Git submodule update"
 git submodule update
 
+
+if [ ! -L ~/.vimrc-custom ]; then
+    echo "Creating symbolic link ~/.vimrc-custom to $PWD/../vimrc-custom"
+    ln -s $PWD/../vimrc-custom ~/.vimrc-custom
+fi
+
 if [ -f ~/.vimrc ]; then
     echo "~/.vimrc already exists, please remove or move"
     exit 1

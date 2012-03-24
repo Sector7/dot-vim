@@ -2,9 +2,9 @@ call pathogen#infect()
 syntax on
 set hlsearch
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set foldmethod=marker
 set background=dark
 set nowrap
@@ -108,7 +108,7 @@ set showmatch
 set whichwrap=b,s,<,>,[,]
 
 " More common in PEAR coding standard
-inoremap  { {<CR>}<C-O>O
+" inoremap  { {<CR>}<C-O>O
 " Maybe this way in other coding standards
 " inoremap  { <CR>{<CR>}<C-O>O
 
@@ -134,3 +134,5 @@ function! OpenPhpFunction (keyword)
   exe 'norm V'
 endfunction
 au FileType php noremap K :call OpenPhpFunction(expand('<cword>'))<CR>
+
+source $HOME/.vimrc-custom
