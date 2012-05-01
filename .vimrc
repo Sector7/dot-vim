@@ -71,7 +71,7 @@ endif
 
 let g:stop_autocomplete=0
 function! CleverTab(type)
-    if a:type=='omni' && !pumvisible()
+    if a:type=='omni' && !pumvisible() && !g:stop_autocomplete
         if !&omnifunc && &omnifunc != ''
             return "\<C-X>\<C-O>\<C-P>"
         endif
