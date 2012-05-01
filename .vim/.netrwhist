@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/var/www/public/crew.nordsken.se/htdocs/lib/js'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/var/www'
+let g:netrw_dirhist_2='/var'
+let g:netrw_dirhist_3='/'
+let g:netrw_dirhist_4='/var/www/public/crew.nordsken.se/htdocs/modules/admin'
+let g:netrw_dirhist_5='/var/www/public/crew.nordsken.se/htdocs/modules'
+let g:netrw_dirhist_6='/var/www/public/crew.nordsken.se/htdocs/modules/admin'
+let g:netrw_dirhist_7='/var/www/public/crew.nordsken.se/htdocs/modules/teams'
+let g:netrw_dirhist_8='/var/www/public/crew.nordsken.se/htdocs/lib/js'
+let g:netrw_dirhist_9='/var/www/public/crew.nordsken.se/htdocs/lib'

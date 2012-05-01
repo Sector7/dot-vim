@@ -72,15 +72,17 @@ endif
 let g:stop_autocomplete=0
 function! CleverTab(type)
     if a:type=='omni' && !pumvisible()
+        if !&omnifunc && &omnifunc != ''
+            return "\<C-X>\<C-O>\<C-P>"
+        endif
+    elseif a:type=='keyword' && !pumvisible() && !g:stop_autocomplete
         let col = col('.') - 1
         if !col || getline('.')[col - 1] !~ '\k'
             let g:stop_autocomplete=1
             return "\<TAB>"
-        elseif !&omnifunc && &omnifunc != ''
-            return "\<C-X>\<C-O>\<C-P>"
         endif
-    elseif a:type=='keyword' && !pumvisible() && !g:stop_autocomplete
-        return "\<C-X>\<C-N>\<C-P>"
+        "return "\<C-X>\<C-N>\<C-P>"
+        return "\<C-N>\<C-P>"
     elseif a:type=='next'
         if pumvisible()
             let g:stop_autocomplete=0
@@ -97,7 +99,7 @@ function! CleverTab(type)
     endif
     return ''
 endfunction
-inoremap <silent><TAB> <C-R>=CleverTab('omni')<CR><C-R>=CleverTab('keyword')<CR><C-R>=CleverTab('next')<CR>
+inoremap <silent><TAB> <C-R>=CleverTab('keyword')<CR><C-R>=CleverTab('omni')<CR><C-R>=CleverTab('next')<CR>
 inoremap <silent><S-TAB> <C-R>=CleverTab('back')<CR>
 
 set list
@@ -105,6 +107,7 @@ set listchars=tab:>-,trail:-
 set showmode                    " always show command or insert mode
 set ruler
 set showmatch
+set completeopt+=menuone
 set whichwrap=b,s,<,>,[,]
 
 " More common in PEAR coding standard
