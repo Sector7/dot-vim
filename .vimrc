@@ -138,4 +138,8 @@ function! OpenPhpFunction (keyword)
 endfunction
 au FileType php noremap K :call OpenPhpFunction(expand('<cword>'))<CR>
 
+"fix autocomplete menu
+highlight PMenu ctermbg=0 ctermfg=white cterm=None
+highlight PMenuSel ctermbg=5 ctermfg=white cterm=Bold
+
 source $HOME/.vimrc-custom
