@@ -25,6 +25,8 @@ set mouse=a
 set number
 set autoindent
 set ttymouse=xterm2
+set pastetoggle=<F12>
+
 filetype on
 filetype plugin on
 " for C-like programming, have automatic indentation:
