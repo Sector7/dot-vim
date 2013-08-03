@@ -18,7 +18,7 @@ au BufEnter,BufRead     *.inc   setf php
 au BufEnter,BufRead     *.tpl   setf php
 au BufNewFile,BufRead   *.tpl setf php
 au BufNewFile,BufRead   *.inc setf php
-au BufRead,BufNewFile *.go set filetype=go
+"au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.pp set filetype=puppet
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
