@@ -30,9 +30,10 @@ set pastetoggle=<F12>
 
 filetype on
 filetype plugin on
+
+
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang,php,js set cindent
-
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType js set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -48,12 +49,14 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif 
 
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-    \ if &omnifunc == "" |
-    \   setlocal omnifunc=syntaxcomplete#Complete |
-    \ endif
-endif
+"let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+  \   call SuperTabChain(&omnifunc, "<c-n>") |
+  \ endif
 
 let g:syntastic_phpcs_conf=" --standard=Drupal --extensions=php,module,inc,install,test,profile,theme"
 
@@ -72,38 +75,39 @@ if has('statusline')
   set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
 
-let g:stop_autocomplete=0
-function! CleverTab(type)
-    if a:type=='omni' && !pumvisible() && !g:stop_autocomplete
-        if !&omnifunc && &omnifunc != ''
-            return "\<C-X>\<C-O>\<C-P>"
-        endif
-    elseif a:type=='keyword' && !pumvisible() && !g:stop_autocomplete
-        let col = col('.') - 1
-        if !col || getline('.')[col - 1] !~ '\k'
-            let g:stop_autocomplete=1
-            return "\<TAB>"
-        endif
-        "return "\<C-X>\<C-N>\<C-P>"
-        return "\<C-N>\<C-P>"
-    elseif a:type=='next'
-        if pumvisible()
-            let g:stop_autocomplete=0
-            return "\<C-N>"
-        elseif g:stop_autocomplete
-            let g:stop_autocomplete=0
-        else
-            return "\<C-N>"
-        endif
-    elseif a:type=='back'
-        if pumvisible() 
-            return "\<C-P>"
-        endif
-    endif
-    return ''
-endfunction
-inoremap <silent><TAB> <C-R>=CleverTab('keyword')<CR><C-R>=CleverTab('omni')<CR><C-R>=CleverTab('next')<CR>
-inoremap <silent><S-TAB> <C-R>=CleverTab('back')<CR>
+"let g:stop_autocomplete=0
+"function! CleverTab(type)
+    "if a:type=='omni' && !pumvisible() && !g:stop_autocomplete
+        "if !&omnifunc && &omnifunc != ''
+            "return "\<C-X>\<C-O>\<C-P>"
+        "endif
+    "elseif a:type=='keyword' && !pumvisible() && !g:stop_autocomplete
+        "let col = col('.') - 1
+        "if !col || getline('.')[col - 1] !~ '\k'
+            "let g:stop_autocomplete=1
+            "return "\<TAB>"
+        "endif
+        ""return "\<C-X>\<C-N>\<C-P>"
+        "return "\<C-N>\<C-P>"
+    "elseif a:type=='next'
+        "if pumvisible()
+            "let g:stop_autocomplete=0
+            "return "\<C-N>"
+        "elseif g:stop_autocomplete
+            "let g:stop_autocomplete=0
+        "else
+            "return "\<C-N>"
+        "endif
+    "elseif a:type=='back'
+        "if pumvisible() 
+            "return "\<C-P>"
+        "endif
+    "endif
+    "return ''
+"endfunction
+""inoremap <silent><TAB> <C-R>=CleverTab('keyword')<CR><C-R>=CleverTab('omni')<CR><C-R>=CleverTab('next')<CR>
+"inoremap <silent><TAB> <C-R>=CleverTab('omni')<CR><C-R>=CleverTab('keyword')<CR><C-R>=CleverTab('next')<CR>
+"inoremap <silent><S-TAB> <C-R>=CleverTab('back')<CR>
 
 set list
 set listchars=tab:>-,trail:-
