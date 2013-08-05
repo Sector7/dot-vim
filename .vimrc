@@ -144,6 +144,7 @@ function! OpenPhpFunction (keyword)
   exe 'norm V'
 endfunction
 au FileType php noremap K :call OpenPhpFunction(expand('<cword>'))<CR>
+au FileType go noremap K :Godoc<CR>
 
 "fix autocomplete menu
 highlight PMenu ctermbg=0 ctermfg=white cterm=None
