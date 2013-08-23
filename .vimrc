@@ -8,7 +8,6 @@ set tabstop=2
 set foldmethod=marker
 set background=dark
 set nowrap
-set expandtab
 set textwidth=0
 map <F2> :w!<CR>
 map <F9> :! gcc -Wall -o %< %<CR>
@@ -128,7 +127,13 @@ set whichwrap=b,s,<,>,[,]
 
 "; i command mode ger ; i slutet på raden
 noremap ; :s/\([^;]\)$/\1;/<cr>
-noremap <tab> :%s/\t/    /g<cr>
+"noremap <tab> :%s/\t/    /g<cr>
+
+"Fixes for showing TABs only in golang files
+au FileType go noremap <F3> :set list!<CR>
+au FileType go set nolist
+au FileType go set noexpandtab
+
 
 function! OpenPhpFunction (keyword)
   let proc_keyword = substitute(a:keyword , '_', '-', 'g')
