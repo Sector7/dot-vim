@@ -9,8 +9,8 @@ set foldmethod=marker
 set background=dark
 set nowrap
 set textwidth=0
-map <F2> :w!<CR>
-map <F9> :! gcc -Wall -o %< %<CR>
+"map <F2> :w!<CR>
+"map <F9> :! gcc -Wall -o %< %<CR>
 map <F10> :! ./%<<CR>
 
 au BufEnter,BufRead     *.inc   setf php
@@ -58,6 +58,7 @@ autocmd FileType *
   \ endif
 
 let g:syntastic_phpcs_conf=" --standard=Drupal --extensions=php,module,inc,install,test,profile,theme"
+
 
 if has('statusline')
   set laststatus=2
@@ -130,7 +131,7 @@ noremap ; :s/\([^;]\)$/\1;/<cr>
 "noremap <tab> :%s/\t/    /g<cr>
 
 "Fixes for showing TABs only in golang files
-au FileType go noremap <F3> :set list!<CR>
+"au FileType go noremap <F3> :set list!<CR>
 au FileType go set nolist
 au FileType go set noexpandtab
 
