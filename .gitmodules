@@ -28,3 +28,12 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = https://github.com/evidens/vim-twig
+[submodule ".vim/bundle/vim-phpunitqf"]
+	path = .vim/bundle/vim-phpunitqf
+	url = https://github.com/joonty/vim-phpunitqf.git
+[submodule ".vim/bundle/vim-phpunit"]
+	path = .vim/bundle/vim-phpunit
+	url = https://github.com/pedrogimenez/vim-phpunit.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
