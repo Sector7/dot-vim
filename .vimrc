@@ -33,14 +33,14 @@ filetype plugin on
 
 
 " for C-like programming, have automatic indentation:
-autocmd FileType c,cpp,slang,php,js set cindent
+"autocmd FileType c,cpp,slang,php,js set cindent
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType js set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType htm set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 let php_sql_query=1
 let php_htmlInStrings=1
 let mapleader = ","
