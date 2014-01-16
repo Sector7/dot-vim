@@ -33,7 +33,7 @@ filetype plugin on
 
 
 " for C-like programming, have automatic indentation:
-"autocmd FileType c,cpp,slang,php,js set cindent
+autocmd FileType c,cpp,slang,php,js set cindent
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType js set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
