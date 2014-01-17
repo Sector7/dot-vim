@@ -25,7 +25,9 @@ au BufLeave *.css set cindent
 set mouse=a
 set number
 set autoindent
-set ttymouse=xterm2
+"set ttymouse=xterm2 this caused problems with wide terminals
+"this works:
+set ttymouse=urxvt
 set pastetoggle=<F12>
 
 filetype on
