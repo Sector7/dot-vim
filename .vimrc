@@ -157,4 +157,7 @@ au FileType go noremap K :Godoc<CR>
 highlight PMenu ctermbg=0 ctermfg=white cterm=None
 highlight PMenuSel ctermbg=5 ctermfg=white cterm=Bold
 
+"insert word under cursor in ctrlp
+nmap <leader>lw :CtrlP<CR><C-\>w
+
 source $HOME/.vimrc-custom
