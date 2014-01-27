@@ -30,9 +30,7 @@ set autoindent
 set ttymouse=urxvt
 set pastetoggle=<F12>
 
-filetype on
-filetype plugin on
-
+filetype plugin indent on
 
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang,php,js set cindent

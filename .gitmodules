@@ -40,3 +40,9 @@
 [submodule ".vim/bundle/tern_for_vim"]
 	path = .vim/bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
+[submodule ".vim/bundle/pdv"]
+	path = .vim/bundle/pdv
+	url = https://github.com/tobyS/pdv.git
+[submodule ".vim/bundle/vmustache"]
+	path = .vim/bundle/vmustache
+	url = https://github.com/tobyS/vmustache.git
