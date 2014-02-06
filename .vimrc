@@ -27,7 +27,11 @@ set number
 set autoindent
 "set ttymouse=xterm2 this caused problems with wide terminals
 "this works:
-set ttymouse=urxvt
+if has("mouse_urxvt")
+    set ttymouse=urxvt
+else
+    set ttymouse=xterm2
+end
 set pastetoggle=<F12>
 
 filetype plugin indent on
