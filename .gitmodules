@@ -46,3 +46,9 @@
 [submodule ".vim/bundle/vmustache"]
 	path = .vim/bundle/vmustache
 	url = https://github.com/tobyS/vmustache.git
+[submodule "vim-mustache-handlebars"]
+	path = vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule ".vim/bundle/vim-mustache-handlebars"]
+	path = .vim/bundle/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git
