@@ -157,6 +157,11 @@ endfunction
 au FileType php noremap K :call OpenPhpFunction(expand('<cword>'))<CR>
 au FileType go noremap K :Godoc<CR>
 
+
+if has("autocmd")
+  au  BufNewFile,BufRead *.hbt set filetype=html syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
+endif
+
 "fix autocomplete menu
 highlight PMenu ctermbg=0 ctermfg=white cterm=None
 highlight PMenuSel ctermbg=5 ctermfg=white cterm=Bold
