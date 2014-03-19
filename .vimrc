@@ -1,12 +1,13 @@
 call pathogen#infect()
-syntax on
+syntax enable
+set background=dark
+
 set hlsearch
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set foldmethod=marker
-set background=dark
 set nowrap
 set textwidth=0
 "map <F2> :w!<CR>
@@ -51,7 +52,7 @@ let mapleader = ","
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif 
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 "let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType = "<c-n>"
@@ -104,7 +105,7 @@ endif
             "return "\<C-N>"
         "endif
     "elseif a:type=='back'
-        "if pumvisible() 
+        "if pumvisible()
             "return "\<C-P>"
         "endif
     "endif
