@@ -156,8 +156,6 @@ function! OpenPhpFunction (keyword)
   exe 'norm V'
 endfunction
 au FileType php noremap K :call OpenPhpFunction(expand('<cword>'))<CR>
-au FileType go noremap K :Godoc<CR>
-
 
 if has("autocmd")
   au  BufNewFile,BufRead *.hbt set filetype=html syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
