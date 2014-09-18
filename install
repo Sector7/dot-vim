@@ -34,3 +34,8 @@ if [ ! -L ~/.vim ]; then
     echo "Creating symbolic link ~/.vim to $PWD/.vim"
     ln -s $PWD/.vim/ ~/.vim
 fi
+
+
+#todo install this automaticly:
+#sudo npm install -g git://github.com/ramitos/jsctags.git
+# cd bundle/tern_for_vim && npm install

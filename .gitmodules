@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/tagbar-phpctags.vim"]
 	path = .vim/bundle/tagbar-phpctags.vim
 	url = https://github.com/vim-php/tagbar-phpctags.vim.git
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
